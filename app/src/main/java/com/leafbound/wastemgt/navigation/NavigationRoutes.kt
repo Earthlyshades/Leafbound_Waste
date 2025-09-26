@@ -1,10 +1,7 @@
 package com.leafbound.wastemgt.navigation
 
-sealed class Screen(val route: String) {
-    object Home : Screen("home")
-    object Camera : Screen("camera")
-    object Maps : Screen("maps")
-    object Recommendations : Screen("recommendations/{barcode}") {
-        fun createRoute(barcode: String) = "recommendations/$barcode"
-    }
-}
+const val HOME_SCREEN = "home"
+const val CAMERA_SCREEN = "camera"
+const val MAPS_SCREEN = "maps"
+const val RECOMMENDATIONS_SCREEN = "recommendations/{barcode}"
+

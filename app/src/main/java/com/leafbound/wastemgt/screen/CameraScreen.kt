@@ -33,10 +33,7 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.common.InputImage
 import androidx.compose.runtime.LaunchedEffect
-import com.leafbound.wastemgt.navigation.Screen
-
-
-
+import com.leafbound.wastemgt.navigation.RECOMMENDATIONS_SCREEN
 
 @OptIn(ExperimentalGetImage::class)
 @Composable
@@ -131,7 +128,7 @@ fun CameraScreen(navController: NavController) {
 
     LaunchedEffect(scannedBarcode) {
         scannedBarcode?.let { code ->
-            navController.navigate(Screen.Recommendations.createRoute(code))
+            navController.navigate(RECOMMENDATIONS_SCREEN.replace("{barcode}", code))
         }
     }
 }
